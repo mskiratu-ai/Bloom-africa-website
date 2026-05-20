@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Africa</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f7f3eb;
+color:#1e1e1e;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+background:#f7f3eb;
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+font-weight:700;
+color:#0d5c46;
+}
+
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#222;
+font-weight:500;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:60px 8%;
+background:linear-gradient(rgba(247,243,235,0.85),rgba(247,243,235,0.9)),
+url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop') center/cover;
+}
+
+.hero-content{
+max-width:850px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+color:#0d5c46;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+line-height:1.8;
+color:#444;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+margin:10px;
+}
+
+.primary{
+background:#b08d57;
+color:white;
+}
+
+.secondary{
+border:2px solid #0d5c46;
+color:#0d5c46;
+}
+
+.section{
+padding:90px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-family:'Playfair Display',serif;
+font-size:2.8rem;
+color:#0d5c46;
+margin-bottom:15px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#0d5c46;
+}
+
+.about{
+background:#0d5c46;
+color:white;
+padding:70px;
+border-radius:30px;
+text-align:center;
+}
+
+.about h2{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+margin-bottom:20px;
+}
+
+footer{
+background:#111;
+color:#ddd;
+text-align:center;
+padding:40px 20px;
+margin-top:60px;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:2.7rem;
+}
+
+nav{
+display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Bloom Africa</div>
+
+<nav>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Vision</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>A New Era</h1>
+
+<p>
+Bloom Africa is building a premium African business ecosystem focused on innovation,
+technology distribution, leadership, and future-forward enterprise development.
+</p>
+
+<a href="#" class="btn primary">Explore</a>
+<a href="#" class="btn secondary">Contact Us</a>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title">
+<h2>What We Do</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Technology Distribution</h3>
+<p>
+Building trusted distribution systems and premium device supply channels across Africa.
+</p>
+</div>
+
+<div class="card">
+<h3>Brand Development</h3>
+<p>
+Creating world-class African brands with premium positioning and identity.
+</p>
+</div>
+
+<div class="card">
+<h3>Leadership & Growth</h3>
+<p>
+Empowering African enterprise through scalable systems and strategic leadership.
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="about">
+<h2>Bloom Africa</h2>
+
+<p>
+Bloom Africa represents a new generation of premium African enterprise —
+modern, elegant, visionary, and globally competitive.
+</p>
+</div>
+</section>
+
+<footer>
+<p>Bloom Africa — A New Era</p>
+<p>Nairobi, Kenya</p>
+</footer>
+
+</body>
+</html>
