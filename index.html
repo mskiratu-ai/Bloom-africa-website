@@ -1,238 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bloom Africa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bloom Africa | A New Era</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Georgia', serif;
+    }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+    body{
+      background:#f7f2eb;
+      color:#123524;
+      overflow-x:hidden;
+    }
 
-body{
-font-family:'Inter',sans-serif;
-background:#f7f3eb;
-color:#1e1e1e;
-}
+    header{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      background:rgba(247,242,235,0.95);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid rgba(193,154,107,0.2);
+    }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 8%;
-background:#f7f3eb;
-border-bottom:1px solid rgba(0,0,0,0.05);
-}
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
 
-.logo{
-font-family:'Playfair Display',serif;
-font-size:2rem;
-font-weight:700;
-color:#0d5c46;
-}
+    .logo img{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+    }
 
-nav a{
-text-decoration:none;
-margin-left:20px;
-color:#222;
-font-weight:500;
-}
+    .logo h2{
+      color:#123524;
+      letter-spacing:2px;
+      font-size:22px;
+    }
 
-.hero{
-min-height:90vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:60px 8%;
-background:linear-gradient(rgba(247,243,235,0.85),rgba(247,243,235,0.9)),
-url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop') center/cover;
-}
+    nav a{
+      text-decoration:none;
+      color:#123524;
+      margin-left:25px;
+      font-size:15px;
+      transition:0.3s;
+    }
 
-.hero-content{
-max-width:850px;
-}
+    nav a:hover{
+      color:#c19a6b;
+    }
 
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:4rem;
-color:#0d5c46;
-margin-bottom:20px;
-}
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 10% 80px;
+      background:
+      linear-gradient(rgba(247,242,235,0.92), rgba(247,242,235,0.92)),
+      url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
 
-.hero p{
-font-size:1.2rem;
-line-height:1.8;
-color:#444;
-margin-bottom:35px;
-}
+    .hero-content{
+      max-width:850px;
+      animation:fadeIn 2s ease;
+    }
 
-.btn{
-display:inline-block;
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-margin:10px;
-}
+    .hero-logo{
+      width:170px;
+      margin-bottom:30px;
+    }
 
-.primary{
-background:#b08d57;
-color:white;
-}
+    .hero h1{
+      font-size:65px;
+      color:#123524;
+      margin-bottom:20px;
+      letter-spacing:4px;
+    }
 
-.secondary{
-border:2px solid #0d5c46;
-color:#0d5c46;
-}
+    .hero h3{
+      color:#c19a6b;
+      font-weight:normal;
+      font-size:28px;
+      margin-bottom:30px;
+      font-style:italic;
+    }
 
-.section{
-padding:90px 8%;
-}
+    .hero p{
+      font-size:20px;
+      line-height:1.8;
+      color:#2e4a3a;
+      margin-bottom:40px;
+    }
 
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
 
-.section-title h2{
-font-family:'Playfair Display',serif;
-font-size:2.8rem;
-color:#0d5c46;
-margin-bottom:15px;
-}
+    .btn{
+      padding:15px 35px;
+      border:none;
+      border-radius:40px;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.4s;
+      text-decoration:none;
+      font-weight:bold;
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
+    .gold-btn{
+      background:#c19a6b;
+      color:white;
+    }
 
-.card{
-background:white;
-padding:35px;
-border-radius:24px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
+    .gold-btn:hover{
+      transform:translateY(-3px);
+      opacity:0.9;
+    }
 
-.card h3{
-margin-bottom:15px;
-color:#0d5c46;
-}
+    .outline-btn{
+      border:2px solid #123524;
+      color:#123524;
+      background:transparent;
+    }
 
-.about{
-background:#0d5c46;
-color:white;
-padding:70px;
-border-radius:30px;
-text-align:center;
-}
+    .outline-btn:hover{
+      background:#123524;
+      color:white;
+    }
 
-.about h2{
-font-family:'Playfair Display',serif;
-font-size:3rem;
-margin-bottom:20px;
-}
+    section{
+      padding:100px 10%;
+    }
 
-footer{
-background:#111;
-color:#ddd;
-text-align:center;
-padding:40px 20px;
-margin-top:60px;
-}
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
 
-@media(max-width:768px){
-.hero h1{
-font-size:2.7rem;
-}
+    .section-title h2{
+      font-size:42px;
+      color:#123524;
+      margin-bottom:15px;
+    }
 
-nav{
-display:none;
-}
-}
-</style>
+    .gold-line{
+      width:90px;
+      height:3px;
+      background:#c19a6b;
+      margin:auto;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about-text p{
+      font-size:18px;
+      line-height:1.9;
+      color:#444;
+      margin-bottom:20px;
+    }
+
+    .about-box{
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      border-top:4px solid #c19a6b;
+    }
+
+    .about-box h3{
+      color:#123524;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .contact{
+      background:#123524;
+      color:white;
+      text-align:center;
+      border-radius:30px 30px 0 0;
+    }
+
+    .contact h2{
+      font-size:42px;
+      margin-bottom:30px;
+    }
+
+    .contact p{
+      font-size:18px;
+      margin-bottom:15px;
+      color:#f0e7dc;
+    }
+
+    .whatsapp-btn{
+      display:inline-block;
+      margin-top:25px;
+      padding:15px 35px;
+      background:#c19a6b;
+      color:white;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .whatsapp-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    footer{
+      background:#0d2418;
+      color:#d8c7b3;
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        display:none;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero h3{
+        font-size:22px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .hero-logo{
+        width:130px;
+      }
+
+      .section-title h2{
+        font-size:32px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">Bloom Africa</div>
+  <div class="logo">
+    <img src="https://i.imgur.com/TX8wQGx.png" alt="Bloom Africa Logo">
+    <h2>BLOOM AFRICA</h2>
+  </div>
 
-<nav>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Vision</a>
-<a href="#">Contact</a>
-</nav>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#vision">Vision</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>A New Era</h1>
 
-<p>
-Bloom Africa is building a premium African business ecosystem focused on innovation,
-technology distribution, leadership, and future-forward enterprise development.
-</p>
+  <div class="hero-content">
 
-<a href="#" class="btn primary">Explore</a>
-<a href="#" class="btn secondary">Contact Us</a>
-</div>
+    <img class="hero-logo" src="https://i.imgur.com/TX8wQGx.png" alt="Bloom Africa Logo">
+
+    <h1>BLOOM AFRICA</h1>
+
+    <h3>A New Era</h3>
+
+    <p>
+      To empower Africa's potential through innovation,
+      investment and intentional impact.
+    </p>
+
+    <div class="buttons">
+      <a href="#vision" class="btn gold-btn">Explore Vision</a>
+      <a href="https://wa.me/254118935829" class="btn outline-btn">WhatsApp Us</a>
+    </div>
+
+  </div>
+
 </section>
 
-<section class="section">
-<div class="section-title">
-<h2>What We Do</h2>
-</div>
+<section id="vision">
 
-<div class="cards">
+  <div class="section-title">
+    <h2>Our Vision</h2>
+    <div class="gold-line"></div>
+  </div>
 
-<div class="card">
-<h3>Technology Distribution</h3>
-<p>
-Building trusted distribution systems and premium device supply channels across Africa.
-</p>
-</div>
+  <div class="about">
 
-<div class="card">
-<h3>Brand Development</h3>
-<p>
-Creating world-class African brands with premium positioning and identity.
-</p>
-</div>
+    <div class="about-text">
+      <p>
+        Bloom Africa is a forward-thinking African enterprise focused on
+        innovation, leadership, growth and transformative opportunities
+        across the continent.
+      </p>
 
-<div class="card">
-<h3>Leadership & Growth</h3>
-<p>
-Empowering African enterprise through scalable systems and strategic leadership.
-</p>
-</div>
+      <p>
+        Built on excellence, intentional impact and premium brand identity,
+        Bloom Africa represents a new generation of African business —
+        bold, modern and globally competitive.
+      </p>
 
-</div>
+      <p>
+        We are building a future where African potential is elevated
+        through strategy, innovation and sustainable expansion.
+      </p>
+    </div>
+
+    <div class="about-box">
+      <h3>Why Bloom Africa?</h3>
+
+      <p>
+        ✔ Premium African Brand Identity
+      </p>
+
+      <p>
+        ✔ Innovation Driven
+      </p>
+
+      <p>
+        ✔ Expansion Focused
+      </p>
+
+      <p>
+        ✔ Investor & Partnership Ready
+      </p>
+
+      <p>
+        ✔ Future E-Commerce Integration
+      </p>
+    </div>
+
+  </div>
+
 </section>
 
-<section class="section">
-<div class="about">
-<h2>Bloom Africa</h2>
+<section class="contact" id="contact">
 
-<p>
-Bloom Africa represents a new generation of premium African enterprise —
-modern, elegant, visionary, and globally competitive.
-</p>
-</div>
+  <h2>Contact Us</h2>
+
+  <p><strong>Phone & WhatsApp:</strong> 0118 935 829</p>
+
+  <p><strong>Email:</strong> bloomtraders882@gmail.com</p>
+
+  <p><strong>Location:</strong> The Hyatt Place, Lower Kabete, Nairobi</p>
+
+  <a class="whatsapp-btn" href="https://wa.me/254118935829">
+    Chat on WhatsApp
+  </a>
+
 </section>
 
 <footer>
-<p>Bloom Africa — A New Era</p>
-<p>Nairobi, Kenya</p>
+  © 2026 Bloom Africa — A New Era. All Rights Reserved.
 </footer>
 
 </body>
